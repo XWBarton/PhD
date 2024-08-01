@@ -1,8 +1,24 @@
+# Set CRAN mirror
+options(repos = c(CRAN = "https://cloud.r-project.org/"))
+
+# Install required packages if not already installed
+packages <- c("ggplot2", "plotly", "tidyverse", "htmlwidgets")
+
+new_packages <- packages[!(packages %in% installed.packages()[,"Package"])]
+if (length(new_packages)) install.packages(new_packages)
+
+# Load the packages
+library(ggplot2)
+library(plotly)
 library(tidyverse)
+library(htmlwidgets)
+
+#read in command line
+args <- commandArgs(trailingOnly = TRUE)
 
 #read in data
-pca <- read_table2("/Users/xavierbarton/bioinformatics/newData-full-II/totalMap-notFiltered/pca/pca_results.eigenvec", col_names = TRUE)
-eigenval <- scan("/Users/xavierbarton/bioinformatics/newData-full-II/totalMap-notFiltered/pca/pca_results.eigenval")
+pca <- read_table2("pca_results.eigenvec", col_names = TRUE)
+eigenval <- scan("pca_results.eigenval")
 
 # remove nuisance column
 pca <- pca[,-1]
@@ -38,7 +54,7 @@ plot <- ggplot(pca_samples, aes(x = PC1, y = PC2, color = river, text = paste("L
   theme_minimal() +
   theme(legend.position = "none")
 
-plot
-
 p_interactive <- ggplotly(plot, tooltip = c("text"))
 p_interactive
+
+saveWidget(p_interactive, "PCA.html")
