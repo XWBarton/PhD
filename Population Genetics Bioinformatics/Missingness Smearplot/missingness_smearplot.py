@@ -41,13 +41,17 @@ def create_missingness_heatmap(vcf_file, output_file):
                    [0.5, custom_colors[2]], [0.75, custom_colors[2]],
                    [0.75, custom_colors[3]], [1.0, custom_colors[3]]]
     
+    # Calculate the step value for x-axis tick marks
+    num_loci = genotype_array.shape[1]
+    step_value = max(1, round(num_loci / 10, -len(str(num_loci // 10)) + 1)) # Round to nearest significant figure
+    
     # Create the interactive heatmap
     fig = go.Figure(data=go.Heatmap(
         z=genotype_array,
         colorscale=color_scale,
         colorbar=dict(
             tickvals=[0, 1, 2, 3],
-            ticktext=['Homozygote reference', 'Heterozygote', 'Homozygote alternate', 'Missing'],
+            ticktext=['Homozygote Reference', 'Heterozygote', 'Homozygote Alternate', 'Missing'],
             title='Genotype'
         )
     ))
@@ -57,8 +61,7 @@ def create_missingness_heatmap(vcf_file, output_file):
         xaxis_title='Loci',
         yaxis_title='Individuals',
         yaxis=dict(tickmode='array', tickvals=np.arange(num_samples), ticktext=samples, tickfont=dict(size=8)),
-        xaxis=dict(tickmode='array', tickvals=np.arange(0, genotype_array.shape[1], step=50000),
-                   ticktext=np.arange(0, genotype_array.shape[1], step=50000))
+        xaxis=dict(tickmode='array', tickvals=np.arange(0, num_loci, step=step_value), ticktext=np.arange(0, num_loci, step=step_value))
     )
     
     # Save the plot as an HTML file
