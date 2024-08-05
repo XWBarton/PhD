@@ -2,9 +2,10 @@ library(dplyr)
 library(tidyr)
 library(ggplot2)
 library(cowplot)
+library(readr)
 
 #how many populations (Q files) are there?
-max_k <- 45
+max_k <- 70
 
 # Define the base file path and the range of K values
 base_path <- "/Users/xavierbarton/bioinformatics/newData-full-II/totalMap-notFiltered/admixture/cv/full-II-admix."
@@ -73,7 +74,7 @@ combined_plot <- cowplot::plot_grid(plotlist = plot_list, ncol = 1)
 plot_height_in_inches <- 4 / 2.54
 
 # Number of plots per page
-plots_per_page <- 11  # You can fit 11 plots per A4 page (11.69 inches / 1.57 inches)
+plots_per_page <- floor(11.69 / plot_height_in_inches)  # Calculate based on A4 page height
 
 # Number of pages required
 num_pages <- ceiling(max_k / plots_per_page)
@@ -87,7 +88,7 @@ for (i in 1:num_pages) {
   current_plots <- plot_list[start_index:end_index]
   
   # Create a combined plot for the current page
-  combined_plot <- cowplot::plot_grid(plotlist = current_plots, ncol = 1, rel_heights = rep(plot_height_in_inches, length(current_plots)))
+  combined_plot <- cowplot::plot_grid(plotlist = current_plots, ncol = 1, rel_heights = rep(1, length(current_plots)))
   
   # Print the combined plot to the PDF
   print(combined_plot)
