@@ -5,17 +5,16 @@ library(cowplot)
 library(readr)
 
 #how many populations (Q files) are there?
-max_k <- 70
+max_k <- 10
 
 # Define the base file path and the range of K values
-base_path <- "/Users/xavierbarton/bioinformatics/newData-full-II/totalMap-notFiltered/admixture/cv/full-II-admix."
+base_path <- "/Users/xavierbarton/bioinformatics/newData-full-III/subsets/subOne/admixture/subOne."
 k_values <- 2:max_k
 
 #Samples from vcf file used for ADMIXTURE analysis
-sample_names <- read_tsv("~/bioinformatics/newData-full-II/totalMap-notFiltered/admixture/sample_names.txt", col_names = "sample")
+sample_names <- read.csv("/Users/xavierbarton/bioinformatics/newData-full-III/subsets/subOne/admixture/samples.txt", header = FALSE, col.names = "samples")
 
-
-# Function to read a file given the K value
+# Function to read a file given the K value# Function to read a file given the K valueFALSE
 read_q_file <- function(k) {
   file_path <- paste0(base_path, k, ".Q")
   read.table(file_path)
