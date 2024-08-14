@@ -49,36 +49,37 @@ def main(input_csv, radius_km):
     # Create a folium map centered on the average location
     center_lat = df['lat'].mean()
     center_lon = df['lon'].mean()
-    m = folium.Map(location=[center_lat, center_lon], zoom_start=10)
+    m = folium.Map(location=[center_lat, center_lon], zoom_start=10, tiles=None)  # Set tiles to None
 
-    # Define a color map for groups
-    colors = ['red', 'blue', 'green', 'purple', 'orange', 'darkred', 'lightred', 'lightblue', 'darkblue', 'darkgreen']
-    color_map = {group: colors[i % len(colors)] for i, group in enumerate(grouped.groups.keys())}
+    # Add the Esri National Geographic World Map tile layer
+    folium.TileLayer('Esri.NatGeoWorldMap').add_to(m)
 
     # Add the merged geometries to the map
-    for _, row in merged_gdf.iterrows():
-        folium.GeoJson(
-            row['geometry'].__geo_interface__,
-            name=f"Group {row['group']}",
-            style_function=lambda feature, color=color_map[row['group']]: {
-                'fillColor': color,
-                'color': color,
-                'weight': 2,
-                'fillOpacity': 0.5,
-            }
-        ).add_to(m)
+    folium.GeoJson(
+        merged_gdf.__geo_interface__,
+        name="Merged Geometries",
+        style_function=lambda feature: {
+            'fillColor': 'red',
+            'color': 'red',
+            'weight': 2,
+            'fillOpacity': 0.5,
+        }
+    ).add_to(m)
 
     # Add individual points as CircleMarkers to the map
     for _, row in df.iterrows():
         folium.CircleMarker(
             location=[row['lat'], row['lon']],
             radius=3,  # Radius of the circle
-            color=color_map[row['group']],
+            color='red',
             fill=True,
-            fill_color=color_map[row['group']],
+            fill_color='red',
             fill_opacity=0.7,
             popup=f"ID: {row['id']}, Group: {row['group']}"
         ).add_to(m)
+
+    # Add layer control to toggle between layers
+    folium.LayerControl().add_to(m)
 
     # Save the map to an HTML file
     m.save('output_map.html')

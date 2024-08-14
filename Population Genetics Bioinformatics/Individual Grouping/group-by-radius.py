@@ -5,10 +5,6 @@ import folium
 import random
 import os
 
-#Group samples together based on a radus n
-#Remember! samples will network together to unionise
-#This means that you may want to not pick your radius size based on a central group (it may be too large)
-
 class UnionFind:
     def __init__(self, size):
         self.parent = list(range(size))
