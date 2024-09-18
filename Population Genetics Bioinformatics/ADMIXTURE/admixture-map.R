@@ -80,7 +80,8 @@ group_map <- leaflet() %>%
     colorPalette = colors,
     width = 60, height = 60,
     showLabels =  TRUE,
-    labelText = groups$group
+    labelText = groups$group,
+    labelMinSize = 20,
   )
 
 group_map

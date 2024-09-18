@@ -35,7 +35,7 @@ def create_missingness_heatmap(vcf_file, output_file):
     genotype_array = np.array(genotype_data).T
     
     # Define the custom colormap
-    custom_colors = ['#27aeef', '#E6C050', '#D95F4B', '#f1f1f1']  # Custom colors: blue, cyan, red, grey
+    custom_colors = ['#27aeef', '#E6C050', '#D95F4B', '#f1f1f1']  
     color_scale = [[0, custom_colors[0]], [0.25, custom_colors[0]],
                    [0.25, custom_colors[1]], [0.5, custom_colors[1]],
                    [0.5, custom_colors[2]], [0.75, custom_colors[2]],
