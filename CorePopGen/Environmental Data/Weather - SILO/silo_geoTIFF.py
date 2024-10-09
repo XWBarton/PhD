@@ -1,3 +1,5 @@
+__version__ = "0.1.0"
+
 import requests
 import os
 from datetime import datetime
@@ -39,6 +41,7 @@ def get_months():
         print("Invalid input. Please enter valid months (1-12).")
 
 def main():
+    print(f"silo_geoTIFF version {__version__}")
     variables = ["monthly_rain", "max_temp", "min_temp", "radiation", "rh_tmax"]
     
     print("Available variables:")

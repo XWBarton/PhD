@@ -1,3 +1,5 @@
+__version__ = "2.0.0"
+
 import os
 import sys
 import argparse
@@ -88,6 +90,7 @@ def calculate_landuse_percentages(tif_dir, shapefile_path, output_csv, buffer_di
     print(f"Results saved to {output_csv}")
 
 def main():
+    print(f"percent.py version {__version__}")
     parser = argparse.ArgumentParser(description="Calculate land use percentages within shapefile polygons for multiple GeoTIFFs")
     parser.add_argument("tif_dir", help="Directory containing land use GeoTIFF files")
     parser.add_argument("shapefile_path", help="Path to the shapefile")

@@ -1,3 +1,5 @@
+__version__ = "1.0.0"
+
 import requests
 from datetime import datetime
 
@@ -11,6 +13,7 @@ def download_file(url, filename):
         print(f"Failed to download: {url}")
 
 def main():
+    print(f"silo_netCDF version {__version__}")
     base_url = "https://s3-ap-southeast-2.amazonaws.com/silo-open-data/Official/annual"
     variables = ["monthly_rain", "max_temp", "min_temp", "radiation", "rh_tmax"]
 
@@ -27,6 +30,7 @@ def main():
             url = f"{base_url}/{variable}/{year}.{variable}.nc"
             filename = f"{year}.{variable}.nc"
             download_file(url, filename)
+            
 
 if __name__ == "__main__":
     main()
