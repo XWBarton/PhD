@@ -1,0 +1,74 @@
+﻿_id,WASG_CODE,AgSoilCode,AgSoilName,WASGname
+1,100,1,Saline wet,Wet or waterlogged soils supergroup
+2,101,1,Saline wet,Saline wet soil
+3,102,1,Saline wet,Salt lake soil
+4,103,2,Semi-wet soils,Semi-wet soil
+5,104,1,Saline wet,Tidal soil
+6,105,1,Saline wet,Wet soil
+7,200,14,Stony soils,Rocky or stony soils supergroup
+8,201,20,Bare rock,Bare rock
+9,202,14,Stony soils,Calcareous stony soil
+10,203,14,Stony soils,Stony soil
+11,300,5,Gravels,Ironstone gravelly soils supergroup
+12,301,5,Gravels,Deep sandy gravel
+13,302,5,Gravels,Duplex sandy gravel
+14,303,5,Gravels,Loamy gravel
+15,304,14,Stony soils,Shallow gravel
+16,400,8,Deep sandy duplexes,Sandy duplexes supergroup
+17,401,8,Deep sandy duplexes,Alkaline grey deep sandy duplex
+18,402,7,Alkaline shallow duplex,Alkaline grey shallow sandy duplex
+19,403,8,Deep sandy duplexes,Grey deep sandy duplex
+20,404,6,Shallow sandy duplexes,Grey shallow sandy duplex
+21,405,8,Deep sandy duplexes,Red deep sandy duplex
+22,406,6,Shallow sandy duplexes,Red shallow sandy duplex
+23,407,8,Deep sandy duplexes,Yellow/brown deep sandy duplex
+24,408,6,Shallow sandy duplexes,Yellow/brown shallow sandy duplex
+25,409,8,Deep sandy duplexes,Reticulite deep sandy duplex
+26,420,3,Shallow sand,Shallow sands supergroup
+27,421,16,Calcareous sands,Calcareous shallow sand
+28,422,3,Shallow sand,Pale shallow sand
+29,423,3,Shallow sand,Red shallow sand
+30,424,3,Shallow sand,Yellow/brown shallow sand
+31,440,12,Pale sands,Deep sands supergroup
+32,441,11,Coloured sands,Brown deep sand
+33,442,16,Calcareous sands,Calcareous deep sand
+34,443,12,Pale sands,Gravelly pale deep sand
+35,444,12,Pale sands,Pale deep sand
+36,445,11,Coloured sands,Red deep sand
+37,446,11,Coloured sands,Yellow deep sand
+38,460,15,Sandy earths,Sandy earths supergroup
+39,461,15,Sandy earths,Acid yellow sandy earth
+40,462,15,Sandy earths,Brown sandy earth
+41,463,15,Sandy earths,Red sandy earth
+42,464,15,Sandy earths,Yellow sandy earth
+43,465,15,Sandy earths,Pale sandy earth
+44,500,13,Clays & shallow loamy duplexes,Loamy duplexes supergroup
+45,501,13,Clays & shallow loamy duplexes,Acid shallow duplex
+46,502,13,Clays & shallow loamy duplexes,Alkaline grey shallow loamy duplex
+47,503,7,Alkaline shallow duplex,Alkaline red shallow loamy duplex
+48,504,13,Clays & shallow loamy duplexes,Grey shallow loamy duplex
+49,505,9,Deep loamy duplexes & earths,Brown deep loamy duplex
+50,506,9,Deep loamy duplexes & earths,Red deep loamy duplex
+51,507,13,Clays & shallow loamy duplexes,Red shallow loamy duplex
+52,508,13,Clays & shallow loamy duplexes,Yellow/brown shallow loamy duplex
+53,520,4,Shallow loam,Shallow loams supergroup
+54,521,4,Shallow loam,Calcareous shallow loam
+55,522,4,Shallow loam,Red shallow loam
+56,523,4,Shallow loam,Red-brown hardpan shallow loam
+57,540,9,Deep loamy duplexes & earths,Loamy earths supergroup
+58,541,9,Deep loamy duplexes & earths,Brown loamy earth
+59,542,10,Calcareous loamy earths,Calcareous loamy earth
+60,543,9,Deep loamy duplexes & earths,Friable red/brown loamy earth
+61,544,9,Deep loamy duplexes & earths,Red loamy earth
+62,545,9,Deep loamy duplexes & earths,Yellow loamy earth
+63,600,13,Clays & shallow loamy duplexes,Cracking clays supergroup
+64,601,13,Clays & shallow loamy duplexes,Hard cracking clay
+65,602,17,Self-mulching clays,Self-mulching cracking clay
+66,620,13,Clays & shallow loamy duplexes,Non-cracking clays supergroup
+67,621,13,Clays & shallow loamy duplexes,Grey non-cracking clay
+68,622,13,Clays & shallow loamy duplexes,Red/brown non-cracking clay
+69,700,0,"No information, not cropping soil",Miscellaneous soils supergroup
+70,701,0,"No information, not cropping soil",Disturbed land
+71,702,1,Saline wet,Water
+72,703,0,"No information, not cropping soil",No suitable group
+73,704,0,"No information, not cropping soil",Undifferentiated soils
