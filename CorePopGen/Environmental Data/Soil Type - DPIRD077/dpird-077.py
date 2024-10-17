@@ -99,7 +99,7 @@ def main():
         result_df = result_df[columns]
 
         # Output to CSV
-        output_path = "output_percentages.csv"
+        output_path = "DPIRD077_soil_percentages.csv"
         result_df.to_csv(output_path, index=False)
 
         print(f"Results saved to {output_path}")
